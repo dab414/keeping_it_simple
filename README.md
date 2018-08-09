@@ -9,13 +9,13 @@ A brief index of this repository:
 
 1. Experiment 1
   
-  * [Preprocessing Script](experiment_one/scripts/preprocessing.R)
+	* [Preprocessing Script](experiment_one/scripts/preprocessing.R)
 
-    * This script converts the raw data from Experiment 1 into several summarized datasets.
+		* This script converts the raw data from Experiment 1 into several summarized datasets.
 
-  *  [Main Analysis](experiment_one/scripts/main_analysis.ipynb)
+	*  [Main Analysis](experiment_one/scripts/main_analysis.ipynb)
 
-  	* This script contains the main analysis reported in Experiment 1, along with some exploratory analyses that didn't get reported in the manuscript.
+		* This script contains the main analysis reported in Experiment 1, along with some exploratory analyses that didn't get reported in the manuscript.
 
 2. Experiment 2
 
@@ -33,7 +33,7 @@ A brief index of this repository:
 
 3. [Performance Data](LINK)
 		
-		*  This script contains the analysis of performance data (for both experiments).
+		* This script contains the analysis of performance data (for both experiments).
 
 If you have any questions, don't hesitate to email -> dab414@lehigh.edu
 
