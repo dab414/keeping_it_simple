@@ -39,7 +39,7 @@ A brief index of this repository:
 
 		* This script contains the analyses preregistered in a time-frozen OSF [repository](https://osf.io/uex5x/register/5730e99a9ad5a102c5745a8a)
 
-	* [Mixed Mode](experiment_two/scripts/mixed_model.ipynb)
+	* [Mixed Model](experiment_two/scripts/mixed_model.ipynb)
 
 		* This script contains a mixed-model analysis of Experiment 2 data (reported in Appendix B of the manuscript).
 
@@ -50,6 +50,7 @@ A brief index of this repository:
 If you have any questions, don't hesitate to email -> dab414@lehigh.edu
 
 Best,
+
 Dave Braun
 
 ## List of Dependencies
