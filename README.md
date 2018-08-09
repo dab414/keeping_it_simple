@@ -9,7 +9,7 @@ A brief index of this repository:
 
 1. Experiment 1
   
-	* [Data](../experiment_one/data)
+	* [Data](experiment_one/data)
 
 	* [Preprocessing Script](experiment_one/scripts/preprocessing.R)
 
@@ -21,7 +21,7 @@ A brief index of this repository:
 
 2. Experiment 2
 
-	* [Data](../experiment_two/data)
+	* [Data](experiment_two/data)
 
 	*  [Preprocessing Script](experiment_two/scripts/preprocessing.R)
 
