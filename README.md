@@ -9,6 +9,8 @@ A brief index of this repository:
 
 1. Experiment 1
   
+	* [Data](../experiment_one/data)
+
 	* [Preprocessing Script](experiment_one/scripts/preprocessing.R)
 
 		* This script converts the raw data from Experiment 1 into several summarized datasets.
@@ -18,6 +20,8 @@ A brief index of this repository:
 		* This script contains the main analysis reported in Experiment 1, along with some exploratory analyses that didn't get reported in the manuscript.
 
 2. Experiment 2
+
+	* [Data](../experiment_two/data)
 
 	*  [Preprocessing Script](experiment_two/scripts/preprocessing.R)
 
