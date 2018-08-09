@@ -1,0 +1,2 @@
+[1] "10.2809831149358% of data lost after main trimming."
+[1] "4.46882720534806% of data lost after rt trimming."

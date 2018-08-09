@@ -1,0 +1,97 @@
+### libraries and import data ----
+library(data.table)
+library(dplyr)
+
+current_data <- fread('../data/disconnect_original.csv')
+
+## select and rename columns ----
+keep <- matrix(c('Subject', 'subject',
+                 'blocks.Sample', 'block',
+                 'pointvalueL.SubTrial.', 'leftpoints',
+                 'pointvalueR.SubTrial.', 'rightpoints',
+                 'Procedure.Trial.', 'procedure',
+                 'responselocation.SubTrial.', 'responselocation',
+                 'RSI.SubTrial.', 'rsi',
+                 'stim1.SubTrial.', 'stim1',
+                 'stimulus.RT.SubTrial.', 'rt',
+                 'blocktime', 'blocktime',
+                 'taskcode.SubTrial.', 'taskcode',
+                 'transition.SubTrial.', 'transition'
+),ncol=2, byrow=T)
+
+
+
+## column renaming and basic variable computing ----
+
+current_data <- current_data[, keep[,1], with = FALSE]
+
+current_data <- current_data %>%
+  `colnames<-`(keep[,2]) %>%
+  mutate(error = ifelse(taskcode == 'error',1,0), 
+         errortrim = ifelse(error == 1 | shift(error == 1), 1, 0),
+         transcode = as.numeric(ifelse(transition == 'Switch', 1, ifelse(transition == 'Rep', 0, ''))),
+         stimrep = ifelse(stim1 == shift(stim1), 1, 0),
+         current_pv = as.numeric(ifelse(shift(responselocation) == 'left', leftpoints, ifelse(shift(responselocation) == 'right', rightpoints, ''))), 
+         other_pv = as.numeric(ifelse(shift(responselocation) == 'right', leftpoints, ifelse(shift(responselocation) == 'left', rightpoints, ''))),
+         difference = as.numeric(ifelse(shift(responselocation) == 'left', rightpoints - leftpoints, ifelse(shift(responselocation) == 'right', leftpoints - rightpoints, '')))) %>%
+  group_by(subject) %>%
+  data.table() 
+  
+## compute error subjects ---- 
+error_subjects <- current_data %>%
+  group_by(subject) %>%
+  summarize(errors = mean(error)) %>%
+  filter(errors > .15)
+
+## remove error subjects ----
+  current_data[, subject_error := mean(error), by = subject][subject_error < .15][, subject_error := NULL]
+
+## save a copy for error data
+  error_data <- current_data
+
+## trial trimming ---- extra hoops to log trial loss
+  current_data <- current_data %>%
+    filter(procedure == 'blockproc')
+
+  original_rows <- nrow(current_data)
+  
+  current_data <- current_data %>%
+    filter(transition != 'StartBlock',
+           errortrim == 0) %>%
+    select(-stim1, -procedure, -taskcode, -transition, -error, -errortrim) %>%
+    data.table()
+  final_rows <- nrow(current_data)
+
+## trim the error data
+  error_data <- error_data %>%
+    filter(procedure == 'blockproc',
+           transition != 'StartBlock') %>%
+    select(-stim1, -procedure, -taskcode, -transition) %>%
+    data.table()
+
+    
+  
+  ## rt data
+  before_rt <- nrow(current_data)
+  rt_data <- current_data[, c('rt_mean', 'rt_sd') := .(mean(rt), sd(rt)), by = subject][rt <= 2*rt_sd + rt_mean & rt >= rt_mean - 2*rt_sd][, c('rt_mean', 'rt_sd') := NULL]
+  after_rt <- nrow(rt_data)
+  paste('RT Rows Trimmed:', nrow(current_data) - nrow(rt_data))
+  paste('Max RT Current Data', max(current_data$rt), 'Max RT for RT data', max(rt_data$rt))
+
+write.csv(current_data, '../data/disconnect.csv', row.names = F)
+write.csv(error_data, '../data/disconnect_errors.csv', row.names = F)
+write.csv(rt_data, '../data/disconnect_rt.csv', row.names = F)
+
+
+sink(file = '../results/preprocessing_trimming_summary.txt')
+paste((1 - (final_rows / original_rows)) * 100, '% of data lost after main trimming.', sep = '')
+paste((1 - (after_rt / before_rt)) * 100, '% of data lost after rt trimming.', sep = '')
+sink(NULL)
+
+
+
+  
+  
+  
+  
+  
