@@ -33,7 +33,7 @@ A brief index of this repository:
 
 3. [Performance Data](LINK)
 		
-		* This script contains the analysis of performance data (for both experiments).
+	* This script contains the analysis of performance data (for both experiments).
 
 If you have any questions, don't hesitate to email -> dab414@lehigh.edu
 
