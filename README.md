@@ -11,6 +11,10 @@ A brief index of this repository:
   
 	* [Data](experiment_one/data)
 
+		* `disconnect_original.csv` -- this is the raw data.
+
+		* `disconnect.csv` -- this is the trimmed data.
+
 	* [Preprocessing Script](experiment_one/scripts/preprocessing.R)
 
 		* This script converts the raw data from Experiment 1 into several summarized datasets.
@@ -22,6 +26,10 @@ A brief index of this repository:
 2. Experiment 2
 
 	* [Data](experiment_two/data)
+
+		* `disconnect_green1-18.csv` -- this is the raw data.
+
+		* `disconnect_green.csv` -- this is the trimmed data.
 
 	*  [Preprocessing Script](experiment_two/scripts/preprocessing.R)
 
