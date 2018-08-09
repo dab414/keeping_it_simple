@@ -25,13 +25,13 @@ A brief index of this repository:
 
 	* [Preregistered Analyses](experiment_two/scripts/preregistered.ipynb)
 
-		* This script contains the analyses preregistered in a time-frozen OSF [repository](LINK)
+		* This script contains the analyses preregistered in a time-frozen OSF [repository](https://osf.io/uex5x/register/5730e99a9ad5a102c5745a8a)
 
 	* [Mixed Mode](experiment_two/scripts/mixed_model.ipynb)
 
 		* This script contains a mixed-model analysis of Experiment 2 data (reported in Appendix B of the manuscript).
 
-3. [Performance Data](LINK)
+3. [Performance Data](https://htmlpreview.github.io/?https://github.com/dab414/keeping_it_simple/blob/master/performance_data/Performance%20Summary.nb.html)
 		
 	* This script contains the analysis of performance data (for both experiments).
 
