@@ -19,7 +19,7 @@ A brief index of this repository:
 
 		* This script converts the raw data from Experiment 1 into several summarized datasets.
 
-	*  [Main Analysis](experiment_one/scripts/main_analysis.ipynb)
+	*  [Main Analysis](experiment_one/scripts/main_analyses.ipynb)
 
 		* This script contains the main analysis reported in Experiment 1, along with some exploratory analyses that didn't get reported in the manuscript.
 
