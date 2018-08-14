@@ -37,7 +37,7 @@ A brief index of this repository:
 
 	* [Preregistered Analyses](experiment_two/scripts/preregistered.ipynb)
 
-		* This script contains the analyses preregistered in a time-frozen OSF [repository](https://osf.io/uex5x/register/5730e99a9ad5a102c5745a8a)
+		* This script contains the analyses that were preregistered in a time-frozen OSF [repository](https://osf.io/uex5x/register/5730e99a9ad5a102c5745a8a)
 
 	* [Mixed Model](experiment_two/scripts/mixed_model.ipynb)
 
