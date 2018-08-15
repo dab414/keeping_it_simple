@@ -111,7 +111,7 @@ first_round <- nrow(current_data)
 
 second_round <- nrow(rt_data)
   
-#in this dataset, subjects 1 and 2 only had 10 blocks, so I'm dropping
+#in this dataset, subjects 1 and 2 were run before we increased the experiment length to 12 blocks, so i'm considering these subjects pilot data and dropping from the main analyses
   current_data <- current_data[current_data$subject != 1 & current_data$subject != 2]
 
 write.csv(current_data, '../data/disconnect_green.csv',row.names = F)
