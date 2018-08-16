@@ -49,7 +49,7 @@ A brief index of this repository:
 
 	* [HTML](https://htmlpreview.github.io/?https://github.com/dab414/keeping_it_simple/blob/master/performance_data/Performance%20Summary.nb.html)
 
-	* [.Rmd]("performance_data/Performance%20Summary.Rmd")
+	* [.Rmd](performance_data/Performance%20Summary.Rmd)
 		
 	* This script contains the analysis of performance data (for both experiments).
 
