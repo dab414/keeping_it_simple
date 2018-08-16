@@ -7,6 +7,8 @@ Because I was learning how to use R throughout this analysis, I used a variety o
 
 A brief index of this repository:
 
+* [var_coding.txt](var_coding.txt) -- A brief explanation about the coding of variables in the data for both experiments.
+
 1. Experiment 1
   
 	* [Data](experiment_one/data)

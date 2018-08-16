@@ -1,0 +1,21 @@
+This is a brief guide to the coding of variables that are represented in the summarized data for both studies. In the raw data you will see the hundreds of variables that are given from EPrime, if you have questions about what any of these variables represent please contact me and I'll clarify. 
+
+Name | Description
+
+subject | Integer, subject ids starting at 1
+block | Integer, block numbers starting at 1
+leftpoints | Integer, how many points is the task that is mapped to the left of the stimulus
+rightpoints | Integer, same as above but to the right of the stimulus
+responselocation | Factor with two levels ['left', 'right'], this variable represents whether the subject responded with the left or right hand on that particular trial
+rsi | Factor with two levels ['200', '1100'] the latency (in milliseconds) between reward onset and target onset, referred to as Cue Target Interval (CTI) in the manuscript
+rt | Integer, response time, the amount of time (in milliseconds) after the presentation of the target stimulus that it took for the subject to push a valid response button
+blocktime | Integer, the amount of time (in seconds) that it took to complete a given block
+transcode | in other words: coding transition. Factor with two levels ['0 (repeat)', '1 (switch)'], also treated as a numeric variable when used as a dependent variable. 
+						A value of `0` indicates that the subject performed the same task as the previous trial
+						A value of `1` indicates that the subject performed the opposite task from the previous trial
+						First trials in the block were removed.
+stimrep | Factor, did the exact target stimulus	from the previous trial repeat on the current trial? If so, code as `1`, otherwise code as `0`
+current_pv | Integer, the point value for the current task, or the task that was performed on the previous trial
+other_pv | Integer, same as above but for the other task, or the task that wasn't performed on the previous trial
+difference | Integer, the difference bewteen task values, coded as: other task points minus current task points. Thus positive numbers reflect greater reward for switching tasks.
+color | Factor, for Experiment 2 only. For the larger reward, what was the font color: ['black', 'green', 'light green']
