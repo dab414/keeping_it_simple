@@ -45,7 +45,11 @@ A brief index of this repository:
 
 		* This script contains a mixed-model analysis of Experiment 2 data (reported in Appendix B of the manuscript).
 
-3. [Performance Data](https://htmlpreview.github.io/?https://github.com/dab414/keeping_it_simple/blob/master/performance_data/Performance%20Summary.nb.html)
+3. Performance Data
+
+	* [HTML](https://htmlpreview.github.io/?https://github.com/dab414/keeping_it_simple/blob/master/performance_data/Performance%20Summary.nb.html)
+
+	* [.Rmd]("performance_data/Performance%20Summary.Rmd")
 		
 	* This script contains the analysis of performance data (for both experiments).
 
